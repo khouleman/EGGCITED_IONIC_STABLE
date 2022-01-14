@@ -1,0 +1,22 @@
+.new-background-color{
+  --background: #ffffff;
+}
+.text-black {
+  color: black;
+}
+
+.content-country {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  align-items: center;
+  margin: 5px 0;
+}
+
+.primary {
+  color: #006d77;
+}
+
+.item-native {
+  --background: white;
+}

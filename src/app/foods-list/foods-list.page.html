@@ -1,22 +1,29 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Ma bibliothèque</ion-title>
+  <ion-toolbar class="new-background-color">
+    <ion-title class="text-black">FOOD</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-<h2>Création d'un nouveau plat</h2>
-  <ion-button routerLink="/tabs/foods/new">Création</ion-button>
-  <h2>Liste des films</h2>
+<ion-content class="new-background-color">
+  <div class="border-title m-3 d-flex justify-content-center flex-column pb-3">
+<h2 class="text-black d-flex ion-justify-content-center">Create your own dish !</h2>
+    <div class="d-flex justify-content-center">
+  <ion-button routerLink="/tabs/foods/new">Create</ion-button>
+    </div>
+  </div>
+
+  <h2 class="d-flex justify-content-center text-black">Dish list</h2>
+
   <ion-grid>
     <ion-row>
-      <ion-col size="4" *ngFor="let food of foods">
+      <ion-col size="12" *ngFor="let food of foods">
         <ion-card [routerLink]="['/tabs/foods', food.id]">
           <img [src]="food.picture" [alt]="food.name">
         </ion-card>
       </ion-col>
     </ion-row>
   </ion-grid>
+
 </ion-content>
 <ion-footer>
 </ion-footer>

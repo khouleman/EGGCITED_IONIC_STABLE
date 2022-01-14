@@ -1,11 +1,106 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<nav class="navbar navbar-expand-lg">
+  <h1 class="logo">EGGCITED</h1>
+</nav>
 
 <ion-content [fullscreen]="true">
 
+  <section class="showcase-area" id="showcase">
+    <div class="showcase-container">
+      <h1 class="main-title" id="home">Eat Right Food</h1>
+      <p style="color: black; padding-left: 20px; padding-right: 20px;">Eat Healty, it is good for our health.</p>
+      <a routerLink="/tabs/food" class="btn btn-primary">FOOD Menu</a>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="about-wrapper container">
+      <div class="about-text">
+        <p class="small">About Me</p>
+        <h2 style="color: #0d0d0d">The ultimate guide to learning to eat healthy</h2>
+        <p>
+          Hello, I'm Nathan and I'm making this site in Angular 12 as part of a project to improve my knowledge. In this
+          site, I will convey one of my passions which is healthy food as well as great food.
+        </p>
+      </div>
+      <div class="about-img">
+        <img src="https://i.postimg.cc/mgpwzmx9/about-photo.jpg" alt="food"/>
+      </div>
+    </div>
+  </section>
+  <section id="food">
+    <h2>Types of food</h2>
+    <div class="food-container container">
+      <div class="food-type fruite">
+        <div class="img-container">
+          <img src="https://i.postimg.cc/yxThVPXk/food1.jpg" alt="error"/>
+          <div class="img-content">
+            <h3>FRUIT</h3>
+            <a
+              href="https://en.wikipedia.org/wiki/Fruit"
+              class="btn btn-primary"
+              target="blank"
+            >learn more</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="food-type vegetable">
+        <div class="img-container">
+          <img src="https://i.postimg.cc/Nffm6Rkk/food2.jpg" alt="error"/>
+          <div class="img-content">
+            <h3>VEGETABLE</h3>
+            <a
+              href="https://en.wikipedia.org/wiki/Vegetable"
+              class="btn btn-primary"
+              target="blank"
+            >learn more</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="food-type grin">
+        <div class="img-container">
+          <img src="https://i.postimg.cc/76ZwsPsd/food3.jpg" alt="error"/>
+          <div class="img-content">
+            <h3>GRAIN</h3>
+            <a
+              href="https://en.wikipedia.org/wiki/Grain"
+              class="btn btn-primary"
+              target="blank"
+            >learn more</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials">
+    <h2 class="testimonial-title">What I Say</h2>
+    <div class="testimonial-container container">
+      <div class="testimonial-box">
+        <div class="customer-detail">
+          <div class="customer-photo">
+            <img src="/assets/homepage/nathan.png" alt=""/>
+            <p class="customer-name" style="color: black">Nathan DEMURU</p>
+          </div>
+        </div>
+        <div class="star-rating">
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+        </div>
+        <p class="testimonial-text">
+          This is the best site to find inspiration and create your own dish! Each composition is unique and reflects
+          the spirit of its creator.
+        </p>
+
+      </div>
+    </div>
+  </section>
+  <footer id="footer">
+    <h2>EGGCITED - Nathan DEMURU &copy; all rights reserved</h2>
+  </footer>
 </ion-content>

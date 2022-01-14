@@ -1,89 +1,104 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar class="new-background-color">
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/tabs/foods"></ion-back-button>
     </ion-buttons>
-    <ion-title *ngIf="food">{{food.title}}</ion-title>
+    <ion-title class="text-black" *ngIf="food">{{food.name}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-button (click)="setModif()">Rendre Modifiable</ion-button>
+<ion-content class="new-background-color">
   <div *ngIf="!modif">
     <ion-grid *ngIf="food">
-      <ion-row>
-<!--        <ion-col>-->
-<!--          <strong>Au cinéma :</strong>-->
-<!--          <ion-icon *ngIf="food.onAir" name="checkmark"></ion-icon>-->
-<!--          <ion-icon *ngIf="!food.onAir" name="close-circle"></ion-icon>-->
-<!--        </ion-col>-->
-        <ion-col>
-          <ion-button (click)="onDelete(food.id)">
-            <ion-icon name="trash"></ion-icon>
-          </ion-button>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col size="6">
-          <img [src]="food.picture">
-        </ion-col>
-        <ion-col size="6">
-          <strong>Title</strong> <br>
-          {{food.name}} <br>
-          <strong>Temps de preparation</strong> <br>
-          {{food.timePreparation}} <br>
-          <strong>Country</strong> <br>
-          {{food.country}} <br>
-          <strong>Category</strong> <br>
-          {{food.category}} <br>
-          <strong>Ingredients</strong> <br>
-          {{food.ingredients}} <br>
-          <strong>Description</strong> <br>
-          {{food.description}} <br>
-          <strong>Made by</strong> <br>
-          {{food.creator}} <br>
-          <strong>At</strong> <br>
-          {{food.releaseDate}} <br>
-        </ion-col>
-      </ion-row>
+
+      <section id="food-menu">
+        <div class="border-menu">
+          <div class="food-menu-container container">
+            <div class="food-menu-item">
+              <div class="food-img">
+                <img class="img-perso" [src]="food.picture" alt="">
+              </div>
+              <div class="food-description">
+                <div class="space-title">
+                  <h2 class="food-title text-black d-flex justify-content-center">{{ food.name }}</h2>
+                  <p class="content-country text-black"><img class="img-food-list mr-3" src="/assets/food-list/time.svg" width="30" height="30" alt="">
+                    <span class="pr-1">Preparation Time </span>
+                    <span class="primary">{{ food.timePreparation }}</span>
+                  </p>
+                </div>
+                <div>
+                  <div class="space-title">
+                    <p class="content-country text-black">
+                      <img class="img-food-list mr-3" width="30" height="30" src="/assets/food-list/country.svg" alt="">
+                      <span class="pr-1">Country :</span> <span class="primary">{{food.country}}</span>
+                    </p>
+                    <p class="content-country text-black">
+                      <img class="img-food-list mr-3" width="30" height="30" src="/assets/food-list/list.svg" alt="">
+                      <span class="pr-1">Category :</span> <span class="primary">{{food.category}}</span>
+                    </p>
+                  </div>
+                  <p class="content-country text-black">
+                    <img class="img-food-list mr-3" width="30" height="30" src="/assets/food-list/ingredients.svg" alt="">
+                    <span class="pr-1">Ingredients:</span> <span class="primary">{{food.ingredients}}</span>
+                  </p>
+                  <p class="content-country text-black">
+                    <img class="img-food-list mr-3" width="30" height="30" src="/assets/food-list/description.svg" alt="">
+                    <span class="pr-1">Description:</span> <span class="primary">{{food.description}}</span>
+                  </p>
+                  <p class="food-price content-country text-black">
+                    <img class="img-food-list mr-3" width="30" height="30"  src="/assets/food-list/user.svg" alt="">
+                    <span class="primary">Made by {{food.creator}} at {{food.releaseDate}}</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </ion-grid>
+    <div class="d-flex w-100 ion-justify-content-center">
+      <ion-button (click)="setModif()">Modify</ion-button>
+      <ion-button (click)="onDelete(food.id)">
+        <ion-icon name="trash"></ion-icon>
+      </ion-button>
+    </div>
   </div>
   <div *ngIf="modif && food">
     <ion-item>
-      <ion-label>Affiche</ion-label>
-      <ion-input type="text" [(ngModel)]="food.picture"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label>Titre</ion-label>
+      <ion-label>Name of the dish</ion-label>
       <ion-input type="text" [(ngModel)]="food.name"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label>Pays</ion-label>
-      <ion-input type="text" [(ngModel)]="food.timePreparation"></ion-input>
+      <ion-label>Picture</ion-label>
+      <ion-input type="text" [(ngModel)]="food.picture"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label>Date</ion-label>
-      <ion-input type="text" [(ngModel)]="food.country"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label>Réalisateur</ion-label>
+      <ion-label>Category</ion-label>
       <ion-input type="text" [(ngModel)]="food.category"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label>Producteur</ion-label>
+      <ion-label>Country</ion-label>
+      <ion-input type="text" [(ngModel)]="food.country"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Ingredients</ion-label>
       <ion-input type="text" [(ngModel)]="food.ingredients"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label>Musique</ion-label>
+      <ion-label>Time Preparation</ion-label>
+      <ion-input type="time" [(ngModel)]="food.timePreparation"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Description</ion-label>
       <ion-input type="text" [(ngModel)]="food.description"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label>Scénario</ion-label>
+      <ion-label>Your name</ion-label>
       <ion-input type="text" [(ngModel)]="food.creator"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label>Durée</ion-label>
-      <ion-input type="text" [(ngModel)]="food.releaseDate"></ion-input>
+      <ion-label>Creation date</ion-label>
+      <ion-input type="date" [(ngModel)]="food.releaseDate"></ion-input>
     </ion-item>
     <p class="text-center">
       <ion-button (click)="onModif()">Modify</ion-button>

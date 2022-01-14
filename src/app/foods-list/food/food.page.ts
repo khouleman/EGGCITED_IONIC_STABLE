@@ -31,14 +31,13 @@ export class FoodPage implements OnInit {
   async setModif() {
     if(!this.modif) {
       const alert = await this.alertCtrl.create({
-        header: 'Etes-vous sur de vouloir modifier ?',
-        subHeader: 'Vous rendrez possible la modification',
+        subHeader: 'Are you sure you want to modify ?',
         buttons: [
           {
-            text: 'Annuler',
+            text: 'Cancel',
             role: 'Cancel'
           }, {
-            text: 'Confirmer',
+            text: 'Confirm',
             handler: () => { this.modif = !this.modif}
           }
         ]

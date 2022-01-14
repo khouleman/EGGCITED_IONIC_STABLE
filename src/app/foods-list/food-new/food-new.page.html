@@ -1,50 +1,82 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar class="new-background-color">
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/tabs/foods"></ion-back-button>
     </ion-buttons>
-    <ion-title>New food</ion-title>
+    <ion-title class="text-black">New food</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-item>
-    <ion-label>Picture</ion-label>
-    <ion-input type="text" [(ngModel)]="food.picture"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label>Name</ion-label>
-    <ion-input type="text" [(ngModel)]="food.name"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label>Time Preparation</ion-label>
-    <ion-input type="text" [(ngModel)]="food.timePreparation"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label>Country</ion-label>
-    <ion-input type="text" [(ngModel)]="food.country"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label>Category</ion-label>
-    <ion-input type="text" [(ngModel)]="food.category"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label>Ingredients</ion-label>
-    <ion-input type="text" [(ngModel)]="food.ingredients"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label>Description</ion-label>
-    <ion-input type="text" [(ngModel)]="food.description"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label>Creator</ion-label>
-    <ion-input type="text" [(ngModel)]="food.creator"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label>Release Date</ion-label>
-    <ion-input type="text" [(ngModel)]="food.releaseDate"></ion-input>
-  </ion-item>
-  <p class="text-center">
-    <ion-button (click)="add()">Send</ion-button>
-  </p>
-</ion-content>
+<body>
+<div class="container">
+  <div>
+
+    <header>
+      <h1 id="title"><|> Share Your Best Food Ever <|></h1>
+      <p id="description">Thank you for taking the time to tell me about your favourite food.</p>
+    </header>
+
+    <div id="survey-form" class="form-modif">
+
+      <div class="form-option">
+        <label>Name of the dish</label>
+        <input type="text" name="username" placeholder="Enter the name" [(ngModel)]="food.name" required>
+      </div>
+
+      <div class="form-option">
+        <label>Picture</label>
+        <input type="text" placeholder="Enter the absolute link of your picture" [(ngModel)]="food.picture"
+               required>
+      </div>
+
+      <div class="form-option">
+        <label>Category</label>
+        <input type="text" placeholder="Enter your dish category (ex: Burger)" [(ngModel)]="food.category">
+      </div>
+
+      <div class="form-option">
+        <label>Country</label>
+        <input type="text" placeholder="Enter your dish country (ex: France)" [(ngModel)]="food.country" required>
+      </div>
+
+      <div class="form-option">
+        <label>Ingredients</label>
+        <input type="text" placeholder="Enter all ingredients of your dish" [(ngModel)]="food.ingredients" required>
+      </div>
+
+      <div class="form-option">
+        <label>Time preparation</label>
+        <input type="time" placeholder="Enter the average time to make your dish" [(ngModel)]="food.timePreparation"
+               required>
+      </div>
+
+      <div class="form-option">
+        <label>Description</label>
+        <input type="text" placeholder="Enter the description of your dish" [(ngModel)]="food.description" required>
+      </div>
+
+      <div class="form-option">
+        <label>Your name</label>
+        <input type="text" placeholder="Enter your Name" [(ngModel)]="food.creator" required>
+      </div>
+
+      <div class="form-option">
+        <label>Creation date</label>
+        <input type="date" placeholder="Enter the date of your creation" [(ngModel)]="food.releaseDate" required>
+      </div>
+
+      <div class="form-option">
+        <input type="submit" value="Create" id="submit" class="submit" (click)="add()">
+      </div>
+
+      <div class="row change" *ngIf="new">
+        <div class="col-12">
+          The dish has been created. Redirect in 2 seconds.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+</body>
+
