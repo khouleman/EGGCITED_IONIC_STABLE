@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/foods"></ion-back-button>
+    </ion-buttons>
+    <ion-title>New food</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>Picture</ion-label>
+    <ion-input type="text" [(ngModel)]="food.picture"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Name</ion-label>
+    <ion-input type="text" [(ngModel)]="food.name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Time Preparation</ion-label>
+    <ion-input type="text" [(ngModel)]="food.timePreparation"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Country</ion-label>
+    <ion-input type="text" [(ngModel)]="food.country"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Category</ion-label>
+    <ion-input type="text" [(ngModel)]="food.category"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Ingredients</ion-label>
+    <ion-input type="text" [(ngModel)]="food.ingredients"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Description</ion-label>
+    <ion-input type="text" [(ngModel)]="food.description"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Creator</ion-label>
+    <ion-input type="text" [(ngModel)]="food.creator"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Release Date</ion-label>
+    <ion-input type="text" [(ngModel)]="food.releaseDate"></ion-input>
+  </ion-item>
+  <p class="text-center">
+    <ion-button (click)="add()">Send</ion-button>
+  </p>
+</ion-content>

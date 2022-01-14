@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Ma bibliothèque</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<h2>Création d'un nouveau plat</h2>
+  <ion-button routerLink="/tabs/foods/new">Création</ion-button>
+  <h2>Liste des films</h2>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="4" *ngFor="let food of foods">
+        <ion-card [routerLink]="['/tabs/foods', food.id]">
+          <img [src]="food.picture" [alt]="food.name">
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-footer>
+</ion-footer>

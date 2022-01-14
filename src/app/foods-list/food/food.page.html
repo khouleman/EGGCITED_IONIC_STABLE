@@ -1,0 +1,92 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/foods"></ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf="food">{{food.title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button (click)="setModif()">Rendre Modifiable</ion-button>
+  <div *ngIf="!modif">
+    <ion-grid *ngIf="food">
+      <ion-row>
+<!--        <ion-col>-->
+<!--          <strong>Au cinéma :</strong>-->
+<!--          <ion-icon *ngIf="food.onAir" name="checkmark"></ion-icon>-->
+<!--          <ion-icon *ngIf="!food.onAir" name="close-circle"></ion-icon>-->
+<!--        </ion-col>-->
+        <ion-col>
+          <ion-button (click)="onDelete(food.id)">
+            <ion-icon name="trash"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">
+          <img [src]="food.picture">
+        </ion-col>
+        <ion-col size="6">
+          <strong>Title</strong> <br>
+          {{food.name}} <br>
+          <strong>Temps de preparation</strong> <br>
+          {{food.timePreparation}} <br>
+          <strong>Country</strong> <br>
+          {{food.country}} <br>
+          <strong>Category</strong> <br>
+          {{food.category}} <br>
+          <strong>Ingredients</strong> <br>
+          {{food.ingredients}} <br>
+          <strong>Description</strong> <br>
+          {{food.description}} <br>
+          <strong>Made by</strong> <br>
+          {{food.creator}} <br>
+          <strong>At</strong> <br>
+          {{food.releaseDate}} <br>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div *ngIf="modif && food">
+    <ion-item>
+      <ion-label>Affiche</ion-label>
+      <ion-input type="text" [(ngModel)]="food.picture"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Titre</ion-label>
+      <ion-input type="text" [(ngModel)]="food.name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Pays</ion-label>
+      <ion-input type="text" [(ngModel)]="food.timePreparation"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Date</ion-label>
+      <ion-input type="text" [(ngModel)]="food.country"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Réalisateur</ion-label>
+      <ion-input type="text" [(ngModel)]="food.category"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Producteur</ion-label>
+      <ion-input type="text" [(ngModel)]="food.ingredients"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Musique</ion-label>
+      <ion-input type="text" [(ngModel)]="food.description"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Scénario</ion-label>
+      <ion-input type="text" [(ngModel)]="food.creator"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Durée</ion-label>
+      <ion-input type="text" [(ngModel)]="food.releaseDate"></ion-input>
+    </ion-item>
+    <p class="text-center">
+      <ion-button (click)="onModif()">Modify</ion-button>
+    </p>
+  </div>
+</ion-content>
