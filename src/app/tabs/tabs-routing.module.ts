@@ -19,6 +19,11 @@ const routes: Routes = [
           m.HomePageModule)
       },
       {
+        path: 'photos',
+        loadChildren: () => import('../photos/photos.module').then(m =>
+          m.PhotosPageModule)
+      },
+      {
         path: 'about',
         loadChildren: () => import('../about/about.module').then(m =>
           m.AboutPageModule)
